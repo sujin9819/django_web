@@ -32,7 +32,6 @@ class GeneData(models.Model):
     Gene_symbol = models.CharField(max_length=50)
     Gene_description = models.TextField()
     COG = models.CharField(max_length=10)
-    COG_category = models.CharField(max_length=10)
     KEGG_KO = models.CharField(max_length=50)
     KEGG_module = models.CharField(max_length=50)
 

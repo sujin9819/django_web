@@ -156,3 +156,26 @@ body {
     font-size: 12px;
     color: #000000;
 }
+
+ul.pagination {
+    display: inline-block;
+    text-align:center;
+}
+
+ul.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+ul.pagination a.active {
+    background-color: #6799D1;
+    color: white;
+    border-radius: 5px;
+}
+  
+ul.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
