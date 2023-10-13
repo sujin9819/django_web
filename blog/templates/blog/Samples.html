@@ -47,17 +47,17 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <td><B>sample ID</B></td>
-                                    <td><B>sex</B></td>
-                                    <td><B>age</B></td>
-                                    <td><B>BMI</B></td>
-                                    <td><B>WBC count</B></td>
-                                    <td><B>Hemoglobin</B></td>
-                                    <td><B>HCT</B></td>
-                                    <td><B>PLT count</B></td>
-                                    <td><B>ESR</B></td>
-                                    <td><B>CRP</B></td>
-                                    <td><B>Albumin</B></td>
+                                    <th>sample ID</th>
+                                    <th>sex</th>
+                                    <th>age</th>
+                                    <th>BMI</th>
+                                    <th>WBC count</th>
+                                    <th>Hemoglobin</th>
+                                    <th>HCT</th>
+                                    <th>PLT count</th>
+                                    <th>ESR</th>
+                                    <th>CRP</th>
+                                    <th>Albumin</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -78,13 +78,20 @@
                                 {% endfor %}
                                 <tbody>
                             </table>
-                            <p> 각 column들 중 lab data에 대한 설명
+                            <br>
+                            <p> **WBC(white blood cell) count: 백혈구 백분율
+                                <br> HCT: hematocit; 혈액에서 적혈구가 차지하고 있는 용적의 비율
+                                <br> PLT (Platelet) count: 혈소판 검사; 혈액 1μL 중에 어느 정도의 혈소판이 있는가를 세는 검사
+                                <br> ESR (Erythrocyte sedimentation rate) : 적혈구 침강 속도
+                                <br> CRP (C-Reactove Protein) : C-반응성 단백질로 대표적인 급성기 반응물질
                             </p>
-                            <p><a href="https://www.w3schools.com/css/css_table_style.asp">다음 링크</a>에 보여주는 스타일로 변경 예정</p>
+                            <br><hr><br>
+                            <h2>MAG abundance</h2>
                             <img id="table" src = "{% static 'img/MAGheatmap.png' %}" width="50%" style="margin: auto;display: block;">
-                            <br><br><br>
+                            <br><hr><br>
                             <h2>MAG network</h2>
                             <iframe src="{% static 'img/d3_genus_results.html' %}" width="90%" height="850px"></iframe> 
+                            <p>Genome에서 분류되었던 MAG들간의 network로, p&lt;0.05에 해당하는 interaction만 적용</p>
 
 
                         </div>

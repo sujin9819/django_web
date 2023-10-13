@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1> {{MAGdetail.MAG_index}}</h1>
+    <br><hr><br>
+    <p>Taxonomy: {{MAGdetail.Taxon}}</p>
+    <p>Genome size : {{MAGdetail.Genome_size}}</p>
+    <p>N50 : {{MAGdetail.N50}}</p>
+    <p>GC : {{MAGdetail.GC}} </p>
+    <p>Contamination score : {{MAGdetail.Contamination_score}}</p>
+    <p>Completeness score : {{MAGdetail.Completeness_score}}</p>
+    <br><hr><br>
+    <a href="./../Genome">목록</a>
+
+{% endblock %}

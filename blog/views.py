@@ -1,8 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import MAGdata, sample
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-
 
 def index(request):
     return render(request, 'blog/index.html')
@@ -25,6 +23,10 @@ def Genome(request):
         lines = paginator.page(paginator.num_pages)
     context = { 'magdatas':lines }
     return render(request, 'blog/Genome.html',context)
+
+def MAG_detail(request, pk):
+    MAGdetail = MAGdata.objects.get(pk=pk)
+    return render(request, 'blog/MAG_detail.html', {'MAGdetail': MAGdetail})
 
 def Samples(request):
     sampledatas = sample.objects.all().order_by('sample_ID')

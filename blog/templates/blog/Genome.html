@@ -42,8 +42,7 @@
                             <br>
                             <br>
                             <br>
-                            <h2> GENOME/GENE CATALOG ;  </h2>
-                            <p> genome/gene catalog 페이지에 대한 설명. </p>
+                            <h2> GENOME CATALOG ;  </h2>
                             <br>
                             <embed src="{% static 'img/MAG_tree.svg' %}" type="image/svg+xml" width=100%>
                             <br>
@@ -62,7 +61,7 @@
                                 <tbody>
                                   {% for MAG in magdatas %}
                                     <tr>
-                                      <td>{{ MAG.MAG_index }}</td>
+                                      <td> <a href="Genome/{{MAG.pk}}"> {{ MAG.pk }}</a></td>
                                       <td>{{ MAG.Taxon }}</td>
                                       <td>{{ MAG.Genome_size }}</td>
                                       <td>{{ MAG.Completeness_score }}</td>
