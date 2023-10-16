@@ -35,10 +35,10 @@ class GeneData(models.Model):
     KEGG_KO = models.CharField(max_length=50)
     KEGG_module = models.CharField(max_length=50)
 
-class GeneCount(models.Model):
-    Gene_index = models.CharField(max_length=50,primary_key=True)
-    Gene_symbol = models.CharField(max_length=50)
-    Gene_description = models.TextField()
+#class GeneCount(models.Model):
+#    Gene_index = models.CharField(max_length=50,primary_key=True)
+#    Gene_symbol = models.CharField(max_length=50)
+#    Gene_description = models.TextField()
     
 
 
