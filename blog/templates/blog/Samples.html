@@ -1,129 +1,60 @@
 <!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
 {% load static %}
-<html>
-    <head>
-        <title>META INSIGHT </title>
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <meta property="og:image" content="{% static 'img/META-Insight_logo.svg' %}">
-    </head>
-    <body>
-        <!--header-->
-        <header class="main">
-            <!--logo-->
-                <a href="Home" id="logo"><img alt="LOGO" src="{% static 'img/META-Insight_logo.svg' %}" height="60px"></a>
-                <!--search-->
-                <div class="form_box">
-                    <form method="get" action="" id="searchForm">
-                        <input type="text" id="search" name="search" value="">
-                        <input type="image" id="filterImage" name="submit" src="{% static 'img/search.svg' %}" alt="Search" title="Search" height="21pt">
-                    </form>
-                </div>
-        </header>
-        <header class="sub">
-            <div class="sub">
-                <!--Nav-->
-                <nav id="nav">
-                    <a href="About">ABOUT US</a>
-                    <a href="PROTOCOL">PROTOCOLS</a>
-                    <a href="Genome">GENOME CATALOG</a>
-                    <a href="Gene">GENE CATALOG</a>
-                    <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank" rel="noopener">BLAST</a>
-                    <a href="Samples">SAMPLES</a>
-                </nav>
-            </div>
-        </header>      
-        <!--content-->    
-        <div class="page_wrap">
-            <div class="page_content" >
-                <div class="row">
-                    <div class="col-12">
-                        <div class="ct_block">
-                            <h1>Sample</h1>
-                            <p> .... 메타데이타 샘플 양상 정리 예정</p>
+<h1>Sample</h1>
+<p> .... 메타데이타 샘플 양상 정리 예정</p>
 
-                            <br>
-                            <h1>Sample table</h1>
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>sample ID</th>
-                                    <th>sex</th>
-                                    <th>age</th>
-                                    <th>BMI</th>
-                                    <th>WBC count</th>
-                                    <th>Hemoglobin</th>
-                                    <th>HCT</th>
-                                    <th>PLT count</th>
-                                    <th>ESR</th>
-                                    <th>CRP</th>
-                                    <th>Albumin</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for sampledata in sampledatas %}
-                                <tr>
-                                    <td>{{sampledata.sample_ID}}</td>
-                                    <td>{{sampledata.Sex}}</td>
-                                    <td>{{sampledata.Age}}</td>
-                                    <td>{{sampledata.BMI}}</td>
-                                    <td>{{sampledata.WBCcount}}</td>
-                                    <td>{{sampledata.Hemoglobin}}</td>
-                                    <td>{{sampledata.HCT}}</td>
-                                    <td>{{sampledata.PLTcount}}</td>
-                                    <td>{{sampledata.ESR}}</td>
-                                    <td>{{sampledata.CRP}}</td>
-                                    <td>{{sampledata.Albumin}}</td>
-                                </tr>
-                                {% endfor %}
-                                <tbody>
-                            </table>
-                            <br>
-                            <p> **WBC(white blood cell) count: 백혈구 백분율
-                                <br> HCT: hematocit; 혈액에서 적혈구가 차지하고 있는 용적의 비율
-                                <br> PLT (Platelet) count: 혈소판 검사; 혈액 1μL 중에 어느 정도의 혈소판이 있는가를 세는 검사
-                                <br> ESR (Erythrocyte sedimentation rate) : 적혈구 침강 속도
-                                <br> CRP (C-Reactove Protein) : C-반응성 단백질로 대표적인 급성기 반응물질
-                            </p>
-                            <br><hr><br>
-                            <h2>MAG abundance</h2>
-                            <img id="table" src = "{% static 'img/MAGheatmap.png' %}" width="50%" style="margin: auto;display: block;">
-                            <br><hr><br>
-                            <h2>MAG network</h2>
-                            <iframe src="{% static 'img/d3_genus_results.html' %}" width="90%" height="850px"></iframe> 
-                            <p>Genome에서 분류되었던 MAG들간의 network로, p&lt;0.05에 해당하는 interaction만 적용</p>
+<br>
+<h1>Sample table</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>sample ID</th>
+        <th>sex</th>
+        <th>age</th>
+        <th>BMI</th>
+        <th>WBC count</th>
+        <th>Hemoglobin</th>
+        <th>HCT</th>
+        <th>PLT count</th>
+        <th>ESR</th>
+        <th>CRP</th>
+        <th>Albumin</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sampledata in sampledatas %}
+    <tr>
+        <td>{{sampledata.sample_ID}}</td>
+        <td>{{sampledata.Sex}}</td>
+        <td>{{sampledata.Age}}</td>
+        <td>{{sampledata.BMI}}</td>
+        <td>{{sampledata.WBCcount}}</td>
+        <td>{{sampledata.Hemoglobin}}</td>
+        <td>{{sampledata.HCT}}</td>
+        <td>{{sampledata.PLTcount}}</td>
+        <td>{{sampledata.ESR}}</td>
+        <td>{{sampledata.CRP}}</td>
+        <td>{{sampledata.Albumin}}</td>
+    </tr>
+    {% endfor %}
+    <tbody>
+</table>
+<br>
+<p> **WBC(white blood cell) count: 백혈구 백분율
+    <br> HCT: hematocit; 혈액에서 적혈구가 차지하고 있는 용적의 비율
+    <br> PLT (Platelet) count: 혈소판 검사; 혈액 1μL 중에 어느 정도의 혈소판이 있는가를 세는 검사
+    <br> ESR (Erythrocyte sedimentation rate) : 적혈구 침강 속도
+    <br> CRP (C-Reactove Protein) : C-반응성 단백질로 대표적인 급성기 반응물질
+</p>
+<br><hr><br>
+<h2>MAG abundance</h2>
+<img id="table" src = "{% static 'img/MAGheatmap.png' %}" width="50%" style="margin: auto;display: block;">
+<br><hr><br>
+<h2>MAG network</h2>
+<iframe src="{% static 'img/d3_genus_results.html' %}" width="90%" height="850px"></iframe> 
+<p>Genome에서 분류되었던 MAG들간의 network로, p&lt;0.05에 해당하는 interaction만 적용</p>
 
-
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div id="footer-wrap">
-                <div class="page_footer">
-                    <div class="footer_links">
-                        <a href="About">License &amp; Citation</a>
-                        <a href="mailto:metainsight@gnu.ac.kr">Contact</a>
-                    </div>
-                    <div class="footer_logos">
-                        <a href="https://www.gnu.ac.kr/main/main.do" target="_blank" rel="noopener">
-                            <img alt="GNU" id ="GNUlogo" src="{% static 'img/GNU.png' %}" height="60px">
-                        </a>
-                        <a href="https://www.yonsei.ac.kr/sc/" target="_blank" rel="noopener">
-                            <img alt="Yonsei Univ" id="Yonseilogo" src="{% static 'img/Yonsei.jpg' %}" height="60px">
-                        </a>
-                        <a href="https://www.msit.go.kr/index.do" target="_blank" rel="noopener">
-                            <img alt="Ministry of Science and ICT" id="MSITlogo" src="{% static 'img/msit.png' %}" height="60px">
-                        </a>
-                    </div>
-                    <div class="version_info">
-                        Version 1<br>
-                        Released 2023-09-15
-                    </div>
-                </div>
-                
-            </div>
-        </div> 
-    </body>
-    
-</html>
+{% endblock content %}

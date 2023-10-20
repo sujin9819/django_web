@@ -1,12 +1,12 @@
-{% extends 'SOP/Protocol_base.html' %}
+{% extends 'SOP/Protocol_base_en.html' %}
 {% block content %}
+<div align="right" width="200px">
+    <button class="button" onclick="location.href='/PROTOCOL/ko'" >Korean</button>
+    <button class="button disabled"> English </button>
+</div>
+<h1>PROTOCOLS Page</h1>
 
-<h2>Disabled Button</h2>
-
-<p>selct languange (default: english):</p>
-
-<button class="button">Korean</button>
-<button class="button disabled"> English </button>
+<h2>select languange (default: english):</h2>
 
 {% include 'SOP/Protocol_nav.html' %}
 
