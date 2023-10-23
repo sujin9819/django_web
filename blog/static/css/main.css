@@ -43,8 +43,13 @@ div.col-9, div.col-3, div.col-12{
 div.col-3{
     width:25%;
     float: left;
+    position: sticky;
+    top: 20px ;
 }
-
+div.col-3 div.ct_block {
+    position: sticky;
+    top: 20px ;
+}
 div.col-9{
     width: 75%;
     float: left;

@@ -37,10 +37,7 @@ def search(request):
         if request.method == 'POST':
             searched = request.POST['searched']        
             genes = GeneData.objects.filter(Gene_description__contains=searched)
-            paginator = Paginator(genes, 25)
-            page = request.GET.get('page',1)
-            paginated = paginator.get_page(page)
-            return render(request, 'blog/gene_search.html', {'searched': searched, 'genes': paginated})
+            return render(request, 'blog/gene_search.html', {'searched': searched, 'genes': genes})
         else:
             return render(request, 'blog/gene_search.html', {})
         

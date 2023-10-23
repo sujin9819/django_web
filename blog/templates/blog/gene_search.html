@@ -26,58 +26,6 @@
       {% endfor %}
     </tbody>
 </table>
-{% if genes.has_other_pages %}  
-<ul class = "pagination">
-    {% if genes.has_previous %}  
-    <a href="?page={{ genes.previous_page_number }}&genes={{ request.POST.searched }}">&laquo;</a>
-    {% else %}
-    <a>&laquo;</a>
-    {% endif %}
-    
-    {% for i in genes.paginator.page_range %}
-    {% if i >= genes.number|add:-5 and i <= genes.number|add:5 %}
-    {% if genes.number == i %}   
-        <a class="active">{{ i }}</a>
-    {% else %}
-        <a href="?page={{ i }}&genes={{ request.POST.searched }}">{{ i }}</a>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-
-    {% if genes.has_next %}  
-        <a href="?page={{ genes.next_page_number }}&genes={{ request.POST.searched }}">&raquo;</a>
-    {% else %}
-        <a>&raquo;</a>
-    {%endif %}
-    </ul>
-{%endif%}
-
-<div>
-  {# 이전 페이지 존재한다면 #}
-   {% if foods.has_previous %}
-       <a href="?page=1&food={{ request.GET.food }}">&laquo; 처음</a>
-       <a href="?page={{ foods.previous_page_number }}&food={{ request.GET.food }}">&lt; 이전</a>
-   {% endif %}
-
-  {# 요청받는 값 만큼 페이지 수 확인 #}
-   {% for num in foods.paginator.page_range %}
-     {# 현재 페이지랑 같다면 강조 #}
-       {% if num == foods.number %}
-           <strong>{{ num }}</strong>
-       {% else %}
-       {# 페이지 번호 뿌리기 #}
-           <a href="?page={{ num }}&food={{ request.GET.food }}">{{ num }}</a>
-       {% endif %}
-   {% endfor %}
-
-  {# 다음 페이지 존재한다면 #}
-   {% if foods.has_next %}
-       <a href="?page={{ foods.next_page_number }}&food={{ request.GET.food }}">다음 &gt;</a>
-       <a href="?page={{ foods.paginator.num_pages }}&food={{ request.GET.food }}">마지막 &raquo;</a>
-   {% endif %}
-</div>
-
-
 
 {% else %} 
 <h1> 찾고자하는 유전자 정보가 없습니다. </h1>
