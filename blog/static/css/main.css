@@ -159,8 +159,12 @@ figure{
 
 
 body {
-    font-size: 12px;
+    font-size: 15px;
     color: #000000;
+}
+
+div.col-3 div.ct_block {
+    font-size: 12px;
 }
 
 ul.pagination {
@@ -188,7 +192,7 @@ ul.pagination a:hover:not(.active) {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    max-width: 100%;
   }
   
   th, td {
@@ -211,7 +215,7 @@ td a {
     background-color: #6799D1; 
     border: none;
     color: white;
-    padding: 15px 16px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

@@ -32,40 +32,52 @@
             <div class="page_content" >
                 <div class="row">
                     <div class="col-12">
-                        <div class="main_ct_block" style="height: 250px;">
+                        <div class="main_ct_block" style="min-height: 250px;">
                             <h1> META-Insight   </h1>
                             <br>
-                            <p>Meta-omics analysis stands as a revolutionary approach in modern life sciences. We introduce InsightMeta, a platform designed to comprehend and interpret intricate microbial communities within complex biological systems, such as the microbiome.Our mission is to provide cutting-edge metagenomics analysis solutions for life science researchers and medical professionals. InsightMeta empowers users to collect, analyze, and visualize diverse metagenomics data, offering valuable insights and information.
-                                Data Integration: InsightMeta efficiently integrates metagenomics data from various sources, enabling comprehensive analysis.
-                                In-depth Analysis and Visualization: Our powerful analysis engine delves into data at a profound level, presenting intuitive visualizations to facilitate comprehension of complex information.
-                                Personalized Outputs: Tailored results and reports are provided to match the requirements of researchers and medical experts, aiding informed decision-making.
-                                Robust Analysis Pipeline: InsightMeta supports accurate data interpretation and extraction of biological significance through its robust analysis pipeline. 
+                            <p>
+                                Metagenomic analysis is an innovative approach to interpreting complex biological information to understand the ecology, function, diversity, and interactions of microbial communities.
+                                 Our goal is to introduce state-of-the-art analytical methods that enable accurate meta-omics analysis and provide meta-omics data derived from the accurate gut microbiome of healthy individuals.
+                                 The key feature of our data analysis method is that it organizes microbial community information at the level of microbial genomes, mainly focusing on metagenome-assembled genomes (MAGs).
+                                 Additionally, while metagenomes can offer potential functional information, the presence of specific genes does not necessarily imply their expression.
+                                 By combining metatranscriptome and metaproteome data, we can confirm gene expression or suppression under specific conditions, allowing us to distinguish active microbes from inactive ones from a metabolic perspective.
+                                  In particular, at each step of NGS meta-omics analysis, we introduce an analysis based on shotgun sequencing for metagenome, RNA-seq for metatranscriptome, and Ribo-seq data for metaproteome. In addition to meta-omics data analysis protocols, Meta-Insight provides precise meta-omics data of the gut microbiome in healthy individuals.
+                                 Such data can be helpful not only in understanding the functions of the gut microbiome but also in serving as a control group for research on gut microbiomes related to diseases.
                             </p>                              
                             <br>
                         </div>
-                        <div class="main_ct_block" style="height: 280px;">
+                        <div class="main_ct_block" style="min-height: 280px;">
                             <h1> PROTOCOLS   </h1>
                             <br>
-                            <P>Meta-omics analysis aids in comprehending intricate biological interactions by simultaneously studying various biological molecules such as genes, proteins, and metabolites. However, this data is often vast and irregular, making interpretation challenging. This is where the analysis pipeline comes in, streamlining the process of processing and deriving meaningful results from the data.
-                                Key Steps. Data Collection and Refinement: Gather metagenomics data from diverse sources and refine it by removing noise to obtain clean, usable data.
-                                Analysis and Interpretation: Employ statistical and biological methods to analyze the data and extract biological significance.
-                                Visualization: Present analysis results visually to aid in intuitively understanding complex data.
-                                Providing Insights: Extract valuable information and insights from the analyzed data to support researchers and medical professionals in decision-making.
-                                Metagenomics analysis aids in comprehending intricate biological interactions by simultaneously studying various biological molecules such as genes, proteins, and metabolites. However, this data is often vast and irregular, making interpretation challenging. This is where the analysis pipeline comes in, streamlining the process of processing and deriving meaningful results from the data.
-                                Key Steps
-                                Data Collection and Refinement: Gather metagenomics data from diverse sources and refine it by removing noise to obtain clean, usable data.Analysis and Interpretation: Employ statistical and biological methods to analyze the data and extract biological significance.
+                            <P>
+                                Meta-Insight provides a metagenome analysis protocol that focuses on MAG composition. When performing de novo genome analysis through shotgun sequencing, a process of assembling short reads is required.
+                                 Similar to assembling a single genome from these short fragments, information assembled for each microbial unit in a complex microbial community can offer much more insight into the microbiome ecology.
+                                 Here, we introduce both Illumina's short read and PacBio’s long read-based analysis methods.
                             </P>
+                            <p>
+                                In terms of metatranscriptomics, our analysis protocol includes both MAG-based reference-guided analysis and reference-independent analysis. We describe a method to profile specific expression levels of genes, MAGs, and also detail DE analysis to find differentially expressed genes for experimental design to explore expression level differences.
+                            </p>
+                            <p>
+                                One alternative method designed for mass-based analysis of metaproteomic data is Ribo-seq.
+                                 This method involves fixing the cell state by treating it with chloramphenicol, removing unprotected nucleic acids through MNase treatment, and then analyzing the mRNA sequences involved in protein synthesis. We expect that this approach can address issues associated with low throughput and limited accuracy in databases in bulk analysis-based methods.
+                                 Additionally, protein synthesis can be quantified by identifying the genetic information coding for the protein.
+                            </p>
+                            <p>
+                                The tool selected in the metaomics analysis protocol produces reproducible output, and in cases with similar specifications, software was selected for general use and good computing efficiency.
+                                 In the case of the database used, we selected one that was well curated and capable of regular updates.
+                            </p>
                         </div>
                         <div class="main_ct_block" style="min-height: 250px;">
-                            <h1> GENOME/GENE CATALOG   </h1>
+                            <h1> GENOME/GENE/SAMPLE CATALOG   </h1>
                             <img alt="MAG" id ="MAG" src="{% static 'img/MAG_tree.svg' %}" height="200px" align="right">
                             <br>
-                            <P>Phylogenetic trees are powerful tools in biology that depict the evolutionary relationships among different species or groups. These trees visually represent the evolutionary history, showing how species are related through common ancestors and the sequence of branching events over time.
-                                Importance of Phylogenetic Trees                                
-                                Understanding the evolutionary connections between species is essential in deciphering the history of life on Earth. Phylogenetic trees help scientists study biodiversity, trace the origins of specific traits, and gain insights into the processes that drive evolutionary change.
-                                Phylogenetic trees are powerful tools in biology that depict the evolutionary relationships among different species or groups. These trees visually represent the evolutionary history, showing how species are related through common ancestors and the sequence of branching events over time.
-                                Importance of Phylogenetic Trees                                
-                                Understanding the evolutionary connections between species is essential in deciphering the history of life on Earth. Phylogenetic trees help scientists study biodiversity, trace the origins of specific traits, and gain insights into the processes that drive evolutionary change.</P>
+                            <P>
+                                <b>GENOME CATALOG:</b> Provides information on the healthy individual's gut microbiome at the core metagenome-assembled genome (MAG) level. <br>
+                                <b>GENE CATALOG:</b> Provides information on the healthy individual's gut microbiome at the gene level, including the normalized abundance of each gene and the expression levels of transcripts and proteins.<br>
+                                <b>BLAST:</b> Allows user access based on sequence (nucleotide/amino acid).<br>
+                                <b>SAMPLES:</b> Provides information about the cohort used for database construction, including metadata and network of key microbial groups.
+
+                            </P>
                         </div>
 
                     </div>
