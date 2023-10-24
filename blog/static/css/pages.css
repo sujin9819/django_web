@@ -4,6 +4,7 @@ pre {
     margin: 0.5em 0;
     overflow: auto;
     border-radius: 0.3em;
+    line-height:120%;
 }
 code {
     font-family: monospace;
@@ -12,8 +13,18 @@ code {
 
 pre code {
     background: transparent;
+
 }
 
 div.ct_block img{
     max-width: 100%;
+}
+
+div.col-9 div.ct_block {
+    line-height:180%;
+}
+
+figure{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
