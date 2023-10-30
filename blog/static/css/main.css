@@ -96,14 +96,6 @@ div.form_box{
     padding: 10px;
 }
 
-div.code_box{
-    background-color: #F7F6F3;
-    color: #656565;
-    padding: 15px 30px 15px 30px;
-    font-family: 'Consolas';
-    width: 80%;
-}
-
 header.main {
     background-color: #ffffff;
     overflow: auto;

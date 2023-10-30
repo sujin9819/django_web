@@ -1,14 +1,15 @@
 pre {
-    background-color: #EFF1F3;
-    padding: 1em;
+    background-color: #F7F6F3;
+    padding: 15px 30px 15px 30px;
     margin: 0.5em 0;
     overflow: auto;
     border-radius: 0.3em;
     line-height:120%;
 }
 code {
-    font-family: monospace;
-    background-color: #EFF1F3;
+    background-color: #F7F6F3;
+    color: #656565;
+    font-family: 'Consolas';
 }
 
 pre code {
@@ -21,7 +22,7 @@ div.ct_block img{
 }
 
 div.col-9 div.ct_block {
-    line-height:180%;
+    line-height:1.6;
 }
 
 figure{
