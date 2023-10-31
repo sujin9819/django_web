@@ -3,10 +3,12 @@
 
 {% block content %}
 <h1>
-    검색하고자 하는 내용을 입력해주세요!
+  GENE CATALOG
 </h1>
-<h3>현재 버전에서는 유전자 annotation정보만을 이용하여 검색이 가능합니다! </h3>
-<br> <br>
+<p>
+  Please enter the content you want to search for.<br>
+  In the current version (Meta-Insight v1.0), searching is possible using only annotation information such as gene description </p>
+<br><hr> <br>
 
 <div class="search_form">
     <form method="POST" action="{% url 'search' %}">
@@ -21,7 +23,7 @@
 
 
 <br><br>
-<p>예시:</p>
+<p>Example of keywords:</p>
 
 
 {% endblock content %}

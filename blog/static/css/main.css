@@ -84,6 +84,10 @@ div.main_ct_block {
     color: #3d5583;
 }
 
+span.highlight{
+    color: #f00
+}
+
 div.page_wrap{
     overflow: auto;
     background-image:url('/static/img/bg_png.png') ;

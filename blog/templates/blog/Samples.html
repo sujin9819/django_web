@@ -5,7 +5,10 @@
 {% load static %}
 
 <br>
-<h1>Sample table</h1>
+<h1>Sample Metadata</h1>
+<p>
+    Metainsight provides information on the gut microbiome of individuals who have been medically diagnosed as healthy.
+</p>
 <table class="table table-striped" style="width:100%;">
     <thead>
     <tr>
@@ -41,18 +44,21 @@
     <tbody>
 </table>
 <br>
-<p> **WBC(white blood cell) count: 백혈구 백분율
-    <br> HCT: hematocit; 혈액에서 적혈구가 차지하고 있는 용적의 비율
-    <br> PLT (Platelet) count: 혈소판 검사; 혈액 1μL 중에 어느 정도의 혈소판이 있는가를 세는 검사
-    <br> ESR (Erythrocyte sedimentation rate) : 적혈구 침강 속도
-    <br> CRP (C-Reactove Protein) : C-반응성 단백질로 대표적인 급성기 반응물질
+<p> **
+    <br> WBC (<b>w</b>hite <b>b</b>lood <b>c</b>ell) count: Percentage of white blood cells in the blood.
+    <br> HCT (<b>h</b>emato<b>c</b>i<b>t</b>): The ratio of the volume of red blood cells in the blood to the total blood volume.
+    <br> PLT (Platelet) count: Platelet count test; a test measures the quantity of platelets in 1 μL of blood.
+    <br> ESR (<b>E</b>rythrocyte <b>s</b>edimentation <b>r</b>ate): sed rate. The rate at which red blood cells settle to the bottom of test tube over time.
+    <br> CRP (<b>C</b>-<b>r</b>eactive <b>p</b>rotein): a protein made by the liver. The level of CRP increases when there&#39;s inflammation in the body.
 </p>
+<br><hr><br>
+
+<h2>MAG network</h2>
+<iframe src="{% static 'img/d3_genus_results.html' %}" width="90%" height="850px"></iframe> 
+<p>Significant interactions of p&lt;0.05 level in a network between MAGs classified in Genome</p>
 <br><hr><br>
 <h2>MAG abundance</h2>
 <img id="table" src = "{% static 'img/MAGheatmap.png' %}" width="50%" style="margin: auto;display: block;">
-<br><hr><br>
-<h2>MAG network</h2>
-<iframe src="{% static 'img/d3_genus_results.html' %}" width="90%" height="850px"></iframe> 
-<p>Genome에서 분류되었던 MAG들간의 network로, p&lt;0.05에 해당하는 interaction만 적용</p>
+
 
 {% endblock content %}

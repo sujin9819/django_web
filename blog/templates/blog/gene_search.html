@@ -2,7 +2,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% if searched %}
-<h1> 검색하신 "{{ searched }}"에 대한 정보입니다. </h1>
+<h1> Search Results</h1>
+<h4> Keyword : "{{ searched }}"</h4>
 <br><hr><br>
 <table class="table table-bordered">
     <thead>
@@ -23,13 +24,19 @@
           <td>{{ gene.RNAcount }} </td>
           <td>{{ gene.Ribocount }}</td>
         </tr>
+        {% empty %}
+        <tr>
+          <td colspan="5" style="text-align:center">No match genes</td>
+        </tr>
       {% endfor %}
     </tbody>
 </table>
+<br><br><br>
+<a href="/Gene">list</a>
 
 {% else %} 
-<h1> 찾고자하는 유전자 정보가 없습니다. </h1>
+<h1> please enter keyword.. </h1>
 <br><br><br><br><br>
-<a href="/Gene">목록</a>
+<a href="/Gene">list</a>
 {% endif %}
 {% endblock content %}

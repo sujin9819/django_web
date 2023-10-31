@@ -36,7 +36,7 @@ def Samples(request):
 def search(request):
         if request.method == 'POST':
             searched = request.POST['searched']        
-            genes = GeneData.objects.filter(Gene_description__contains=searched)
+            genes = GeneData.objects.filter(Gene_description__contains=searched).order_by('-RNAcount','-Ribocount')
             return render(request, 'blog/gene_search.html', {'searched': searched, 'genes': genes})
         else:
             return render(request, 'blog/gene_search.html', {})
