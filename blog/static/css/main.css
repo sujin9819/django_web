@@ -74,7 +74,6 @@ div.ct_block {
     padding: 30px 20px;
     background-color: #ffffff;
     margin: 0px 15px 15px 25px;
-    min-height: 750px;
 }
 
 div.main_ct_block {
@@ -279,4 +278,5 @@ td a {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    max-width: 95%;
   }

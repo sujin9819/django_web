@@ -5,8 +5,8 @@ from .models import SOP_list
 
 def Protocol(request):
     return render(request, 'SOP/PROTOCOL.html')
-def Protocol_ko(request):
-    return render(request, 'SOP/PROTOCOL_ko.html')
+def Protocol_en(request):
+    return render(request, 'SOP/PROTOCOL_en.html')
 
 
 

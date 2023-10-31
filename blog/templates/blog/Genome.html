@@ -9,9 +9,9 @@
 <br>
 <embed src="{% static 'img/MAG_tree.svg' %}" type="image/svg+xml" width=100%>
 <br>
-<h3>MAG table</h3>
+<h3 id="MAG" >MAG table</h3>
 <br>
-<table class="table table-bordered">
+<table class="table table-bordered" style="width:100%;">
     <thead>
         <tr>
         <th>MAG_index</th>
@@ -35,9 +35,10 @@
 </table>
 
 {% if magdatas.has_other_pages %}  
-<ul class = "pagination">
+<div align="center">
+    <ul class = "pagination">
     {% if magdatas.has_previous %}  
-    <a href="?page={{ magdatas.previous_page_number }}">&laquo;</a>
+    <a href="?page={{ magdatas.previous_page_number }}#MAG">&laquo;</a>
     {% else %}
     <a>&laquo;</a>
     {% endif %}
@@ -47,16 +48,17 @@
     {% if magdatas.number == i %}   
         <a class="active">{{ i }}</a>
     {% else %}
-        <a href="?page={{ i }}">{{ i }}</a>
+        <a href="?page={{ i }}#MAG">{{ i }}</a>
     {% endif %}
     {% endif %}
     {% endfor %}
 
     {% if magdatas.has_next %}  
-        <a href="?page={{ magdatas.next_page_number }}">&raquo;</a>
+        <a href="?page={{ magdatas.next_page_number }}#MAG">&raquo;</a>
     {% else %}
         <a>&raquo;</a>
     {%endif %}
     </ul>
-{%endif%}
+    {%endif%}
+</div>
 {% endblock content %}
