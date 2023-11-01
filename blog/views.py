@@ -27,7 +27,16 @@ def Genome(request):
 
 def MAG_detail(request, pk):
     MAGdetail = MAGdata.objects.get(pk=pk)
-    return render(request, 'blog/MAG_detail.html', {'MAGdetail': MAGdetail})
+    genes = GeneData.objects.filter(MAG=MAGdetail.pk)
+    page = request.GET.get('page',1)
+    paginator = Paginator(genes, 15)
+    try:
+        lines = paginator.page(page)
+    except PageNotAnInteger:
+        lines = paginator.page(1)
+    except EmptyPage:
+        lines = paginator.page(paginator.num_pages)
+    return render(request, 'blog/MAG_detail.html', {'MAGdetail': MAGdetail,'genes':lines})
 
 def Samples(request):
     sampledatas = sample.objects.all().order_by('sample_ID')

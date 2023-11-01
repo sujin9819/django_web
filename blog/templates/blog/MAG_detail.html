@@ -9,7 +9,58 @@
     <p>GC : {{MAGdetail.GC}} </p>
     <p>Contamination score : {{MAGdetail.Contamination_score}}</p>
     <p>Completeness score : {{MAGdetail.Completeness_score}}</p>
-    <br><hr><br>
-    <a href="/Genome">Back</a>
+    <p>"{% url 'excel:downloadFile'  %}"</p>
+    <p id="gene">Gene annotation </p>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Gene index</th>
+          <th>Gene symbol</th>
+          <th>Gene description</th>
+          <th>RNA coverage</th>
+          <th>Ribo coverage</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for gene in genes %}  
+          <tr>
+            <td>{{ gene.Gene_index }} </td>
+            <td>{{ gene.Gene_symbol }}</td>
+            <td>{{ gene.Gene_description }}</td>
+            <td>{{ gene.RNAcount }} </td>
+            <td>{{ gene.Ribocount }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+  {% if genes.has_other_pages %}  
+<div align="center">
+    <ul class = "pagination">
+    {% if genes.has_previous %}  
+    <a href="?page={{ genes.previous_page_number }}#gene">&laquo;</a>
+    {% else %}
+    <a>&laquo;</a>
+    {% endif %}
+    
+    {% for i in genes.paginator.page_range %}
+    {% if i >= genes.number|add:-5 and i <= genes.number|add:5 %}
+    {% if genes.number == i %}   
+        <a class="active">{{ i }}</a>
+    {% else %}
+        <a href="?page={{ i }}#gene">{{ i }}</a>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
 
+    {% if genes.has_next %}  
+        <a href="?page={{ genes.next_page_number }}#gene">&raquo;</a>
+    {% else %}
+        <a>&raquo;</a>
+    {%endif %}
+    </ul>
+    {%endif%}
+</div>
+<br><hr><br>
+  <a href="/Genome">Back</a>
+    
 {% endblock %}
