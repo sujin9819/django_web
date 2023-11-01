@@ -25,7 +25,7 @@
         {% for MAG in magdatas %}
         <tr>
             <td> <a href="Genome/{{MAG.pk}}"> {{ MAG.pk }}</a></td>
-            <td>{{ MAG.Taxon }}</td>
+            <td class="taxon">{{ MAG.Taxon }}</td>
             <td>{{ MAG.Genome_size }}</td>
             <td>{{ MAG.Completeness_score }}</td>
             <td>{{ MAG.Contamination_score }}</td>

@@ -201,6 +201,9 @@ table {
     background-color: #6799D1;
     color: white;
   }
+td.taxon{
+    word-break:break-all;
+}
 td a {
     text-decoration: solid;
     color: #000000;
