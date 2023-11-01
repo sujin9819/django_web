@@ -28,6 +28,7 @@ def Genome(request):
 def MAG_detail(request, pk):
     MAGdetail = MAGdata.objects.get(pk=pk)
     genes = GeneData.objects.filter(MAG=MAGdetail.pk)
+    gene_count = genes.count()
     page = request.GET.get('page',1)
     paginator = Paginator(genes, 15)
     try:
@@ -36,7 +37,7 @@ def MAG_detail(request, pk):
         lines = paginator.page(1)
     except EmptyPage:
         lines = paginator.page(paginator.num_pages)
-    return render(request, 'blog/MAG_detail.html', {'MAGdetail': MAGdetail,'genes':lines})
+    return render(request, 'blog/MAG_detail.html', {'MAGdetail': MAGdetail,'genes':lines,'gene_count':gene_count})
 
 def Samples(request):
     sampledatas = sample.objects.all().order_by('sample_ID')
