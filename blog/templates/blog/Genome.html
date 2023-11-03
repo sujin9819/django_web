@@ -3,9 +3,7 @@
 {% block content %}
 {% load static %}
 <br>
-<br>
-<br>
-<h2> GENOME CATALOG ;  </h2>
+<h1> GENOME CATALOG </h1>
 <br>
 <embed src="{% static 'img/MAG_tree.svg' %}" type="image/svg+xml" width=100%>
 <br>
@@ -61,4 +59,12 @@
     </ul>
     {%endif%}
 </div>
+
+<p> * <br>
+    comp. : Completeness score <br>
+    cont. : Contamination score
+</p>
+
 {% endblock content %}
+
+

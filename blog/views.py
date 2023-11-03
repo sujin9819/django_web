@@ -47,7 +47,8 @@ def search(request):
         if request.method == 'POST':
             searched = request.POST['searched']        
             genes = GeneData.objects.filter(Gene_description__contains=searched).order_by('-RNAcount','-Ribocount')
-            return render(request, 'blog/gene_search.html', {'searched': searched, 'genes': genes})
+            gene_count = genes.count()
+            return render(request, 'blog/gene_search.html', {'searched': searched, 'genes': genes,'gene_count':gene_count})
         else:
             return render(request, 'blog/gene_search.html', {})
         
