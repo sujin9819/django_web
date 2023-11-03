@@ -16,8 +16,8 @@
           <th>Gene index</th>
           <th>Gene symbol</th>
           <th>Gene description</th>
-          <th>RNA coverage</th>
-          <th>Ribo coverage</th>
+          <th>KEGG KO</th>
+          <th>KEGG module</th>
         </tr>
       </thead>
       <tbody>
@@ -26,8 +26,8 @@
             <td>{{ gene.Gene_index }} </td>
             <td>{{ gene.Gene_symbol }}</td>
             <td>{{ gene.Gene_description }}</td>
-            <td>{{ gene.RNAcount }} </td>
-            <td>{{ gene.Ribocount }}</td>
+            <td>{{ gene.KEGG_KO }} </td>
+            <td>{{ gene.KEGG_module }}</td>
           </tr>
         {% endfor %}
       </tbody>
