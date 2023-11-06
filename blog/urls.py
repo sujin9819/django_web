@@ -11,4 +11,5 @@ urlpatterns = [
     path('Samples',views.Samples,name="Samples"),
     path('Genome/<pk>', views.MAG_detail, name='MAG_detail'),
     path('search', views.search, name='search'),
+    path('list_logs/', views.Genome, name='list_taxon'),
 ]

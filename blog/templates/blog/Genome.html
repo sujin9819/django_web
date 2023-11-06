@@ -7,8 +7,23 @@
 <br>
 <embed src="{% static 'img/MAG_tree.svg' %}" type="image/svg+xml" width=100%>
 <br>
+
+<div>
+    <br>
+<form action="/list_logs/?search_type={{ type }}&search_keyword={{ keyword }}#MAG" method="get" class="table-with-form" align="right">
+    <fieldset>
+        <label for="search_type"></label>
+        <select id="search_type" name="search_type">
+            <option value="1" {% if type == '1' %} selected {% endif %} >Taxonomy</option>
+            <option value="2" {% if type == '2' %} selected {% endif %} >MAGindex</option>
+        </select>
+        <label>검색어 <input type="text" name="search_keyword" value="{{ keyword }}" /></label>
+        <input type="image" id="filterImage" name="submit" src="{% static 'img/search.svg' %}" alt="Search" title="Search">
+                    
+    </fieldset>
+</form>
 <h3 id="MAG">MAG table</h3>
-<br>
+
 <table class="table table-bordered" style="width:100%;">
     <thead>
         <tr>
@@ -22,7 +37,7 @@
     <tbody>
         {% for MAG in magdatas %}
         <tr>
-            <td> <a href="Genome/{{MAG.pk}}"> {{ MAG.pk }}</a></td>
+            <td> <a href="/Genome/{{MAG.pk}}"> {{ MAG.pk }}</a></td>
             <td class="taxon">{{ MAG.Taxon }}</td>
             <td>{{ MAG.Genome_size }}</td>
             <td>{{ MAG.Completeness_score }}</td>
@@ -36,7 +51,7 @@
 <div align="center">
     <ul class = "pagination">
     {% if magdatas.has_previous %}  
-    <a href="?page={{ magdatas.previous_page_number }}#MAG">&laquo;</a>
+    <a href="?page={{ magdatas.previous_page_number }}&search_type={{ type }}&search_keyword={{ keyword }}#MAG">&laquo;</a>
     {% else %}
     <a>&laquo;</a>
     {% endif %}
@@ -46,13 +61,13 @@
     {% if magdatas.number == i %}   
         <a class="active">{{ i }}</a>
     {% else %}
-        <a href="?page={{ i }}#MAG">{{ i }}</a>
+        <a href="?page={{ i }}&search_type={{ type }}&search_keyword={{ keyword }}#MAG">{{ i }}</a>
     {% endif %}
     {% endif %}
     {% endfor %}
 
     {% if magdatas.has_next %}  
-        <a href="?page={{ magdatas.next_page_number }}#MAG">&raquo;</a>
+        <a href="?page={{ magdatas.next_page_number }}&search_type={{ type }}&search_keyword={{ keyword }}#MAG">&raquo;</a>
     {% else %}
         <a>&raquo;</a>
     {%endif %}
@@ -64,7 +79,7 @@
     comp. : Completeness score <br>
     cont. : Contamination score
 </p>
-
+</div>
 {% endblock content %}
 
 

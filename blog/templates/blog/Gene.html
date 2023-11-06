@@ -11,7 +11,7 @@
 <br><hr> <br>
 
 <div class="search_form">
-    <form method="POST" action="{% url 'search' %}">
+    <form method="POST" action="{% url 'search' %}" class="gene_search">
         {% csrf_token %} 
       <label > Keyword </label>
       <input type="text" id="keyword"  name="searched" placeholder="Keyword..">
