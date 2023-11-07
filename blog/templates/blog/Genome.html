@@ -50,7 +50,7 @@
 <div align="center">
     <ul class = "pagination">
     {% if magdatas.has_previous %}  
-    <a href="?page={{ magdatas.previous_page_number }}&search_type={{ type }}&search_keyword={{ keyword }}#MAG">&laquo;</a>
+    <a href="?page=1&search_type={{ type }}&search_keyword={{ keyword }}#MAG">&laquo;</a>
     {% else %}
     <a>&laquo;</a>
     {% endif %}
@@ -66,7 +66,7 @@
     {% endfor %}
 
     {% if magdatas.has_next %}  
-        <a href="?page={{ magdatas.next_page_number }}&search_type={{ type }}&search_keyword={{ keyword }}#MAG">&raquo;</a>
+        <a href="?page={{ magdatas.paginator.num_pages }}&search_type={{ type }}&search_keyword={{ keyword }}#MAG">&raquo;</a>
     {% else %}
         <a>&raquo;</a>
     {%endif %}

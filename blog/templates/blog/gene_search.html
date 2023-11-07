@@ -37,7 +37,7 @@
 <div align="center">
     <ul class = "pagination">
     {% if genes.has_previous %}  
-    <a href="?page={{ genes.previous_page_number }}&search_type={{ type }}&searched={{ searched }}">&laquo;</a>
+    <a href="?page=1&search_type={{ type }}&searched={{ searched }}">&laquo;</a>
     {% else %}
     <a>&laquo;</a>
     {% endif %}
@@ -53,7 +53,7 @@
     {% endfor %}
 
     {% if genes.has_next %}  
-        <a href="?page={{ genes.next_page_number }}&search_type={{ type }}&searched={{ searched }}">&raquo;</a>
+        <a href="?page={{ genes.paginator.num_pages }}&search_type={{ type }}&searched={{ searched }}">&raquo;</a>
     {% else %}
         <a>&raquo;</a>
     {%endif %}
