@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+{% load static %}
     <h1> {{MAGdetail.MAG_index}}</h1>
     <br><hr><br>
     <p>Taxonomy: {{MAGdetail.Taxon}}</p>
@@ -13,7 +14,19 @@
     <p>Metatranscript read counts : {{MAGdetail.RNAcount}}</p>
     <p>Ribo-seq read counts : {{MAGdetail.Ribocount}}</p>
     <p id="gene">Total number of annotated genes : {{gene_count}} </p>
-    <table class="table table-bordered">
+    <form action="?search_type={{ type }}&search_keyword={{ keyword }}" method="get" class="table-with-form" align="right">
+      <label for="search_type"></label>
+      <select id="search_type" name="search_type">
+          <option value="1" {% if type == '1' %} selected {% endif %} >Gene description</option>
+          <option value="2" {% if type == '2' %} selected {% endif %} >Gene symbol</option>
+      </select>
+      <label> <input type="text" name="search_keyword" value="{{ keyword }}" /></label>
+      <input type="image" id="filterImage" name="submit" src="{% static 'img/search.svg' %}" alt="Search" title="Search">
+    
+    </form>
+    <br>
+    <h3 id="MAG">Gene table</h3>
+    <table class="table table-bordered" style="width=100%">
       <thead>
         <tr>
           <th>Gene index</th>
@@ -39,7 +52,7 @@
 <div align="center">
     <ul class = "pagination">
     {% if genes.has_previous %}  
-    <a href="?page={{ genes.previous_page_number }}#gene">&laquo;</a>
+    <a href="?page={{ genes.previous_page_number }}&search_type={{ type }}&search_keyword={{ keyword }}#gene">&laquo;</a>
     {% else %}
     <a>&laquo;</a>
     {% endif %}
@@ -49,13 +62,13 @@
     {% if genes.number == i %}   
         <a class="active">{{ i }}</a>
     {% else %}
-        <a href="?page={{ i }}#gene">{{ i }}</a>
+        <a href="?page={{ i }}&search_type={{ type }}&search_keyword={{ keyword }}#gene">{{ i }}</a>
     {% endif %}
     {% endif %}
     {% endfor %}
 
     {% if genes.has_next %}  
-        <a href="?page={{ genes.next_page_number }}#gene">&raquo;</a>
+        <a href="?page={{ genes.next_page_number }}&search_type={{ type }}&search_keyword={{ keyword }}#gene">&raquo;</a>
     {% else %}
         <a>&raquo;</a>
     {%endif %}

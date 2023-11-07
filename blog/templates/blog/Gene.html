@@ -7,12 +7,16 @@
 </h1>
 <p>
   Please enter the content you want to search for.<br>
-  In the current version (Meta-Insight v1.0), searching is possible using only annotation information such as gene description </p>
+  In the current version (Meta-Insight v1.0), searching is possible using only annotation information such as gene description and gene symbol. </p>
 <br><hr> <br>
 
 <div class="search_form">
-    <form method="POST" action="{% url 'search' %}" class="gene_search">
-        {% csrf_token %} 
+    <form method="get" action="{% url 'search' %}" class="gene_search">
+      <label for="search_type"></label>
+        <select id="search_type" name="search_type">
+            <option value="1" {% if type == '1' %} selected {% endif %} >Gene description</option>
+            <option value="2" {% if type == '2' %} selected {% endif %} >Gene symbol</option>
+        </select>
       <label > Keyword </label>
       <input type="text" id="keyword"  name="searched" placeholder="Keyword..">
 
@@ -23,6 +27,16 @@
 
 
 <br><br>
+
+<p> example of keyword : </p>
+  <ol>
+    <li>
+      gene symbol : ilvC, ilvB, lacZ
+    </li>
+    <li>
+      gene description : 2-amino-3-ketobutyrate CoA ligase, beta-galactosidase
+    </li>
+  </ol>
 
 
 {% endblock content %}

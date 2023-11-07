@@ -11,16 +11,15 @@
 <div>
     <br>
 <form action="/list_logs/?search_type={{ type }}&search_keyword={{ keyword }}#MAG" method="get" class="table-with-form" align="right">
-    <fieldset>
+
         <label for="search_type"></label>
         <select id="search_type" name="search_type">
             <option value="1" {% if type == '1' %} selected {% endif %} >Taxonomy</option>
             <option value="2" {% if type == '2' %} selected {% endif %} >MAGindex</option>
         </select>
-        <label>검색어 <input type="text" name="search_keyword" value="{{ keyword }}" /></label>
+        <label> <input type="text" name="search_keyword" value="{{ keyword }}" /></label>
         <input type="image" id="filterImage" name="submit" src="{% static 'img/search.svg' %}" alt="Search" title="Search">
-                    
-    </fieldset>
+
 </form>
 <h3 id="MAG">MAG table</h3>
 

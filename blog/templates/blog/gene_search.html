@@ -33,7 +33,33 @@
     </tbody>
 </table>
 <br><br><br>
+{% if genes.has_other_pages %}  
+<div align="center">
+    <ul class = "pagination">
+    {% if genes.has_previous %}  
+    <a href="?page={{ genes.previous_page_number }}&search_type={{ type }}&searched={{ searched }}">&laquo;</a>
+    {% else %}
+    <a>&laquo;</a>
+    {% endif %}
+    
+    {% for i in genes.paginator.page_range %}
+    {% if i >= genes.number|add:-5 and i <= genes.number|add:5 %}
+    {% if genes.number == i %}   
+        <a class="active">{{ i }}</a>
+    {% else %}
+        <a href="?page={{ i }}&search_type={{ type }}&searched={{ searched }}">{{ i }}</a>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
 
+    {% if genes.has_next %}  
+        <a href="?page={{ genes.next_page_number }}&search_type={{ type }}&searched={{ searched }}">&raquo;</a>
+    {% else %}
+        <a>&raquo;</a>
+    {%endif %}
+    </ul>
+    {%endif%}
+</div>
 <a href="/Gene">back</a>
 
 {% else %} 
