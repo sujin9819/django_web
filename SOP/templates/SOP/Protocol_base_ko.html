@@ -2,6 +2,15 @@
 {% load static %}
 <html>
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVTYD1PEF"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-VHVTYD1PEF');
+        </script>
         <title>META INSIGHT </title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <link rel="stylesheet" href="{% static 'css/pages.css' %}">
@@ -27,8 +36,8 @@
                     <a href="/Samples">SAMPLES</a>
                 </nav>
             </div>
-        </header>      
-        <!--content-->    
+        </header>
+        <!--content-->
         <div class="page_wrap">
             <div class="page_content" >
                 <div class="row">
@@ -69,7 +78,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </body>
-    
+
 </html>

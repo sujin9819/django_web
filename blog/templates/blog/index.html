@@ -2,17 +2,25 @@
 {% load static %}
 <html>
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHVTYD1PEF"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-VHVTYD1PEF');
+        </script>
         <title>META INSIGHT </title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <meta property="og:image" content="{% static 'img/META-Insight_logo.svg' %}">
     </head>
     <body>
-        <!--header-->
         <header class="main">
             <!--logo-->
                 <a href="Home" id="logo"><img alt="LOGO" src="{% static 'img/META-Insight_logo.svg' %}" height="60px"></a>
-                
+
         </header>
         <header class="sub">
             <div class="sub">
@@ -26,15 +34,15 @@
                     <a href="Samples">SAMPLES</a>
                 </nav>
             </div>
-        </header>      
-        <!--content-->    
+        </header>
+        <!--content-->
         <div class="page_wrap">
             <div class="page_content" >
                 <div class="row">
                     <div class="col-12">
                         <div class="main_ct_block" style="min-height: 250px;">
                             <h1> META-Insight   </h1>
-                            
+
                             <br>
                             <img alt="MAG" id ="MAG" src="{% static 'img/SOP_main.png' %}" height="200px" align="right" style="padding:30px 5px 30px 10px">
                             <p>
@@ -45,7 +53,7 @@
                                  By combining metatranscriptome and metaproteome data, we can confirm gene expression or suppression under specific conditions, allowing us to distinguish active microbes from inactive ones from a metabolic perspective.
                                   In particular, at each step of NGS meta-omics analysis, we introduce an analysis based on shotgun sequencing for metagenome, RNA-seq for metatranscriptome, and Ribo-seq data for metaproteome. In addition to meta-omics data analysis protocols, Meta-Insight provides precise meta-omics data of the gut microbiome in healthy individuals.
                                  Such data can be helpful not only in understanding the functions of the gut microbiome but also in serving as a control group for research on gut microbiomes related to diseases.
-                            </p>                              
+                            </p>
                             <br>
                         </div>
                         <div class="main_ct_block" style="min-height: 280px;">
@@ -109,7 +117,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </body>
-    
+
 </html>

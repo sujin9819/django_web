@@ -3,9 +3,9 @@ import markdown2
 from django.shortcuts import render, HttpResponse
 from .models import SOP_list
 
-def Protocol(request):
+def Protocol_ko(request):
     return render(request, 'SOP/PROTOCOL.html')
-def Protocol_en(request):
+def Protocol(request):
     return render(request, 'SOP/PROTOCOL_en.html')
 
 
