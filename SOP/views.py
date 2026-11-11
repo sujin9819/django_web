@@ -8,6 +8,8 @@ def Protocol_ko(request):
 def Protocol(request):
     return render(request, 'SOP/PROTOCOL_en.html')
 
+def PROTOCOL(request):
+    return render(request, 'SOP/PROTOCOL_.html')
 
 
 def sop_detail_ko(request, sop, title):
